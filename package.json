@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -11,7 +11,11 @@
     "build:ssr:prod": "ng build --configuration production && ng run v-track-system:server:production",
     "serve:ssr": "node dist/v-track-system/server/main.js",
     "build:ssr": "ng build && ng run v-track-system:server",
-    "prerender": "ng run v-track-system:prerender"
+    "prerender": "ng run v-track-system:prerender",
+    "postinstall": "npm run build:ssr:prod"
+  },
+  "engines": {
+  "node": "18.x"
   },
   "private": true,
   "dependencies": {
