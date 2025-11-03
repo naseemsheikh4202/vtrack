@@ -1,0 +1,139 @@
+.navbar {
+  width: 100%;
+  background-color: #0258b4; /* solid deep navy blue for professional tone */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* ✳️ Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.logo img {
+  height: 42px;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+/* 🧭 Desktop Menu Links */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #f5f7fa;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover & Active Effects */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffe66d;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffe66d;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* 📱 Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  color: #ffffff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* 📱 Mobile Drawer Menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  width: 220px;
+  background: rgba(20, 33, 61, 0.97);
+  flex-direction: column;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.mobile-menu a {
+  color: #ffffffdd;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #ffe66d;
+}
+
+/* When Mobile Menu is Open */
+.mobile-menu.open {
+  display: flex;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🧩 Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

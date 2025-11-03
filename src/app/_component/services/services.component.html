@@ -1,0 +1,23 @@
+<section class="services-section">
+  <div class="overlay"></div>
+
+  <div class="content-wrapper">
+    <div class="section-header">
+      <h2>Our <span>Services</span></h2>
+      <p>
+        Explore how FieldTrack empowers your team with innovative, data-driven field solutions.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="icon">
+          <i [class]="service.icon"></i>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <button class="learn-more">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>

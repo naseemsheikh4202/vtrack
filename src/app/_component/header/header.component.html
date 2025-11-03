@@ -1,0 +1,27 @@
+<header class="navbar">
+  <div class="logo">
+    <!-- <img src="assets/logo.png" alt="VTrack Logo" /> -->
+    <span>VTrack</span>
+  </div>
+
+  <!-- Desktop Menu -->
+  <nav class="nav-links">
+    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/services" routerLinkActive="active">Services</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <!-- Mobile Menu Button -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <a routerLink="/" (click)="closeMenu()">Home</a>
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+    <a routerLink="/services" (click)="closeMenu()">Services</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+  </div>
+</header>
